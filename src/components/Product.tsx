@@ -1,7 +1,18 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
+import Category from './Category';
+
+interface ProductsJson {
+	_id: string;
+	isActive: boolean;
+	price: string;
+	picture: string;
+	category: string;
+	name: string;
+}
 
 const Product = () => {
-	let products;
+	let products: any;
+	let categories: any;
 
 	const fetchFromJson = () => {
 		fetch('./products.json')
@@ -16,7 +27,22 @@ const Product = () => {
 			});
 	};
 
-	return <div>Product</div>;
+	useEffect(() => {
+		fetchFromJson();
+		console.log(products);
+		// for (let index = 0; index < products.length; index++) {
+		// 	categories.push(products[index].category);
+		// }
+		// console.log(categories);
+	}, []);
+
+	return (
+		<div>
+			{/* {categories.map((category: any) => {
+				return <Category category={category} />;
+			})} */}
+		</div>
+	);
 };
 
 export default Product;
