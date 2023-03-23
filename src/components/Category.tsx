@@ -1,15 +1,27 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 
-interface PropsType {
-	category: string;
-	// productName: string;
-}
+const Category = ({ category, products }: any) => {
+	const [productNames, setProductNames] = useState(['']);
 
-const Category = ({ category }: PropsType) => {
+	useEffect(() => {
+		let productNames = [''];
+		productNames.pop();
+		console.log(category);
+		for (const product in products) {
+			if (products[product].category === category) {
+				productNames.push(products[product].name);
+			}
+		}
+		setProductNames(productNames);
+	}, []);
+
 	return (
-		<>
-			<li>{category}</li>
-		</>
+		<div>
+			<h2>{category}</h2>
+			{productNames.map((product, index) => {
+				return <div key={index}>{product}</div>;
+			})}
+		</div>
 	);
 };
 
