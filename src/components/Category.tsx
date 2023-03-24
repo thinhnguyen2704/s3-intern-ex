@@ -16,10 +16,13 @@ const Category = ({ category, products }: any) => {
 	return (
 		<div>
 			<h2>{category}</h2>
-			{productNames.length > 0 &&
-				productNames.map((productName, index) => {
-					return <div className='product-names' key={index}>{productName}</div>;
-				})}
+			{productNames?.map((productName, index) => {
+				return (
+					<div className='product-names' key={index}>
+						{productName}
+					</div>
+				);
+			})}
 		</div>
 	);
 };

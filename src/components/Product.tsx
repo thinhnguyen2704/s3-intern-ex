@@ -37,12 +37,9 @@ const Product = () => {
 
 	return (
 		<div className='flex-container'>
-			{categories.length > 0 &&
-				categories.map((category, index: any) => {
-					return (
-						<Category key={index} category={category} products={products} />
-					);
-				})}
+			{categories?.map((category, index: any) => {
+				return <Category key={index} category={category} products={products} />;
+			})}
 		</div>
 	);
 };
