@@ -1,26 +1,25 @@
-import React, { useEffect, useState } from 'react';
+import { useEffect, useState } from 'react';
 
 const Category = ({ category, products }: any) => {
-	const [productNames, setProductNames] = useState(['']);
+	const [productNames, setProductNames] = useState<string[]>([]);
 
 	useEffect(() => {
-		let productNames = [''];
-		productNames.pop();
-		console.log(category);
+		let productNamesList = [...productNames];
 		for (const product in products) {
 			if (products[product].category === category) {
-				productNames.push(products[product].name);
+				productNamesList.push(products[product].name);
 			}
 		}
-		setProductNames(productNames);
+		setProductNames(productNamesList);
 	}, []);
 
 	return (
 		<div>
 			<h2>{category}</h2>
-			{productNames.map((product, index) => {
-				return <div key={index}>{product}</div>;
-			})}
+			{productNames.length > 0 &&
+				productNames.map((product, index) => {
+					return <div className='product-names' key={index}>{product}</div>;
+				})}
 		</div>
 	);
 };
