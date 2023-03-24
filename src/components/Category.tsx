@@ -17,8 +17,8 @@ const Category = ({ category, products }: any) => {
 		<div>
 			<h2>{category}</h2>
 			{productNames.length > 0 &&
-				productNames.map((product, index) => {
-					return <div className='product-names' key={index}>{product}</div>;
+				productNames.map((productName, index) => {
+					return <div className='product-names' key={index}>{productName}</div>;
 				})}
 		</div>
 	);
