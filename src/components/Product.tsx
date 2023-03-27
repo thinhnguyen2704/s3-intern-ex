@@ -37,7 +37,7 @@ const Product = () => {
 
 	return (
 		<div className='flex-container'>
-			{categories?.map((category, index: any) => {
+			{categories?.map((category: string, index: number) => {
 				return <Category key={index} category={category} products={products} />;
 			})}
 		</div>
