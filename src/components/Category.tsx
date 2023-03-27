@@ -4,7 +4,7 @@ const Category = ({ category, products }: any) => {
 	const [productNames, setProductNames] = useState<string[]>([]);
 
 	useEffect(() => {
-		const productNamesList = [...productNames];
+		const productNamesList: string[] = [];
 		for (let i = 0; i < products.length; i++) {
 			if (products[i].category === category) {
 				productNamesList.push(products[i].name);
