@@ -1,16 +1,16 @@
-import { useEffect, useState } from 'react';
+import { useMemo, useState } from 'react';
 
 const Category = ({ category, products }: any) => {
 	const [productNames, setProductNames] = useState<string[]>([]);
 
-	useEffect(() => {
-		const productNamesList: string[] = [];
+	const productNamesList = useMemo(() => {
+		const tempList: string[] = [];
 		for (let i = 0; i < products.length; i++) {
 			if (products[i].category === category) {
-				productNamesList.push(products[i].name);
+				tempList.push(products[i].name);
 			}
 		}
-		setProductNames(productNamesList);
+		setProductNames(tempList);
 	}, []);
 
 	return (
