@@ -1,7 +1,7 @@
 import { useEffect, useState } from 'react';
 import Category from './Category';
 
-interface ProductsJson {
+interface Product {
 	_id: string;
 	isActive: boolean;
 	price: string;
@@ -11,7 +11,7 @@ interface ProductsJson {
 }
 
 const Product = () => {
-	const [products, setProducts] = useState<ProductsJson>();
+	const [products, setProducts] = useState<Product>();
 	const [categories, setCategories] = useState<string[]>([]);
 
 	useEffect(() => {
