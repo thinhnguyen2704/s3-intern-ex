@@ -11,7 +11,7 @@ interface Product {
 }
 
 const Product = () => {
-	const [products, setProducts] = useState<Product>();
+	const [products, setProducts] = useState<Product[]>([]);
 	const [categories, setCategories] = useState<string[]>([]);
 
 	useEffect(() => {
