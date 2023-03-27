@@ -21,9 +21,9 @@ const Product = () => {
 			})
 			.then((data) => {
 				let tempCategories: string[] = [];
-				for (const product in data) {
-					if (!tempCategories.includes(data[product].category)) {
-						tempCategories.push(data[product].category);
+				for (const i in data) {
+					if (!tempCategories.includes(data[i].category)) {
+						tempCategories.push(data[i].category);
 					}
 				}
 				setCategories(tempCategories);
