@@ -5,9 +5,9 @@ const Category = ({ category, products }: any) => {
 
 	useEffect(() => {
 		const productNamesList = [...productNames];
-		for (const product in products) {
-			if (products[product].category === category) {
-				productNamesList.push(products[product].name);
+		for (let i = 0; i < products.length; i++) {
+			if (products[i].category === category) {
+				productNamesList.push(products[i].name);
 			}
 		}
 		setProductNames(productNamesList);
