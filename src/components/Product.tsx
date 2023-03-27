@@ -20,7 +20,7 @@ const Product = () => {
 				return response.json();
 			})
 			.then((data) => {
-				let tempCategories = [...categories];
+				let tempCategories: string[] = [];
 				for (const product in data) {
 					if (!tempCategories.includes(data[product].category)) {
 						tempCategories.push(data[product].category);
