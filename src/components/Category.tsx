@@ -15,10 +15,10 @@ const Category = ({ category, products }: any) => {
 
 	return (
 		<div>
-			<h2>{category}</h2>
+			<div className='category'>{category}</div>
 			{productNames?.map((productName, index) => {
 				return (
-					<div className='product-names' key={index}>
+					<div className='product-name' key={index}>
 						{productName}
 					</div>
 				);
