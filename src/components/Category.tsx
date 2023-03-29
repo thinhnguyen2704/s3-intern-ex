@@ -5,7 +5,8 @@ const Category = ({ category, products }: any) => {
 
 	const productNamesList = useMemo(() => {
 		const tempList: string[] = [];
-		for (let i = 0; i < products.length; i++) {
+		const productsLength = products.length;
+		for (let i = 0; i < productsLength; i++) {
 			if (products[i].category === category) {
 				tempList.push(products[i].name);
 			}
