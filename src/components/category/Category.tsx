@@ -1,4 +1,5 @@
 import { useMemo, useState } from 'react';
+import './Category.scss';
 
 const Category = ({ category, products }: any) => {
 	const [productNames, setProductNames] = useState<string[]>([]);
