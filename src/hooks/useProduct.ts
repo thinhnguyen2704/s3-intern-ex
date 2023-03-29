@@ -35,14 +35,12 @@ const useProduct = () => {
 			});
 	}, []);
 
-	const product = {
-		products: products,
-		setProducts: setProducts,
-		categories: categories,
-		setCategories: setCategories,
+	return {
+		products,
+		setProducts,
+		categories,
+		setCategories,
 	};
-
-	return product;
 };
 
 export default useProduct;
