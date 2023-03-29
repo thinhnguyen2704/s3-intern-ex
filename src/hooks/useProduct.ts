@@ -20,7 +20,8 @@ const useProduct = () => {
 			})
 			.then((productsData) => {
 				const tempCategories: string[] = [];
-				for (let i = 0; i < productsData.length; i++) {
+				const productsDataLength = productsData.length;
+				for (let i = 0; i < productsDataLength; i++) {
 					if (!tempCategories.includes(productsData[i].category)) {
 						tempCategories.push(productsData[i].category);
 					}
