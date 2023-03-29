@@ -1,5 +1,5 @@
 import './App.css';
-import Category from './components/Category';
+import Category from './components/category/Category';
 import useProduct from './hooks/useProduct';
 
 
