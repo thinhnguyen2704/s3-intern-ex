@@ -18,16 +18,16 @@ const useProduct = () => {
 			.then((response) => {
 				return response.json();
 			})
-			.then((data) => {
+			.then((productsData) => {
 				const tempCategories: string[] = [];
-				for (let i = 0; i < data.length; i++) {
-					if (!tempCategories.includes(data[i].category)) {
-						tempCategories.push(data[i].category);
+				for (let i = 0; i < productsData.length; i++) {
+					if (!tempCategories.includes(productsData[i].category)) {
+						tempCategories.push(productsData[i].category);
 					}
 				}
 				setCategories(tempCategories);
 
-				setProducts(data);
+				setProducts(productsData);
 			})
 			.catch((err: Error) => {
 				console.log(err.message);
