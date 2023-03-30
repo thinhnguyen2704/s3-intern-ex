@@ -19,14 +19,23 @@ const useProduct = () => {
 				return response.json();
 			})
 			.then((productsData) => {
-				const tempCategories: string[] = [];
-				const productsDataLength = productsData.length;
-				for (let i = 0; i < productsDataLength; i++) {
-					if (!tempCategories.includes(productsData[i].category)) {
-						tempCategories.push(productsData[i].category);
-					}
-				}
-				setCategories(tempCategories);
+				// const categories = new Set<string>();
+				// const productsDataLength = productsData.length;
+				// for (let i = 0; i < productsDataLength; i++) {
+				// 	categories.add(productsData[i].category);
+				// }
+
+				// productsData.forEach((product: Product) => {
+				// 	categories.add(product.category);
+				// });
+
+				// setCategories([...categories]);
+
+				setCategories([
+					...new Set<string>(
+						productsData.map((product: Product) => product.category)
+					),
+				]);
 
 				setProducts(productsData);
 			})
