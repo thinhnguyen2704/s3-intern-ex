@@ -8,8 +8,22 @@
 
 .flex-container > div {
 	background-color: black;
-	width: 20%;
+	width: 22%;
 	margin: 5px;
 	text-align: center;
 	line-height: 50px;
+}
+
+@media screen and (max-width: 1000px) {
+  .flex-container > div {
+    width: 30%;
+		padding: 10px;
+		margin: 5px;
+  }
+}
+
+@media screen and (max-width: 250px) {
+  .flex-container {
+    flex-direction: column;
+  }
 }

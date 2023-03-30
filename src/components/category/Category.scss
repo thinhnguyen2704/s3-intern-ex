@@ -1,11 +1,30 @@
+.category, .product-name {
+	color: #fff;
+}
+
 .category {
 	font-size: 35px;
 	border-bottom: 1px solid #fff;
 	height: 120px;
-	color: #fff;
+
 }
 
 .product-name {
 	font-size: 15px;
-	color: #fff;
+}
+
+@media screen and (max-width: 600px) {
+	.category {
+		font-size: 28px;
+	}
+}
+
+@media screen and (max-width: 300px) {
+	.category {
+		font-size: 15px;
+	}
+	
+	.product-name {
+		font-size: 10px;
+	}
 }
