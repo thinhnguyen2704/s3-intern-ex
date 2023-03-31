@@ -1,6 +1,6 @@
 import './App.scss';
-import Category from '../components/category/Category';
-import useProduct from '../hooks/useProduct';
+import Category from './components/category/Category';
+import useProduct from './hooks/useProduct';
 
 function App() {
 	const { categories, products } = useProduct();
