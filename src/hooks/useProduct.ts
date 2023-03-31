@@ -19,18 +19,6 @@ const useProduct = () => {
 				return response.json();
 			})
 			.then((productsData) => {
-				// const categories = new Set<string>();
-				// const productsDataLength = productsData.length;
-				// for (let i = 0; i < productsDataLength; i++) {
-				// 	categories.add(productsData[i].category);
-				// }
-
-				// productsData.forEach((product: Product) => {
-				// 	categories.add(product.category);
-				// });
-
-				// setCategories([...categories]);
-
 				setCategories([
 					...new Set<string>(
 						productsData.map((product: Product) => product.category)
