@@ -1,8 +1,7 @@
-import { useMemo, useState } from 'react';
+import { useMemo } from 'react';
 import './Category.scss';
 
 const Category = ({ category, products }: any) => {
-	const [productNames, setProductNames] = useState<string[]>([]);
 
 	const productNamesList = useMemo(() => {
 		const tempList: string[] = [];
@@ -12,13 +11,13 @@ const Category = ({ category, products }: any) => {
 				tempList.push(products[i].name);
 			}
 		}
-		setProductNames(tempList);
+		return tempList;
 	}, []);
 
 	return (
 		<div>
 			<div className='category'>{category}</div>
-			{productNames?.map((productName, index) => {
+			{productNamesList?.map((productName, index) => {
 				return (
 					<div className='product-name' key={index}>
 						{productName}
