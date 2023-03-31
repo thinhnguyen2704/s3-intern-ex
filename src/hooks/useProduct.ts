@@ -21,7 +21,9 @@ const useProduct = () => {
 			.then((productsData) => {
 				setCategories([
 					...new Set<string>(
-						productsData.map((product: Product) => product.category)
+						productsData.map(
+							(product: Product) => product.category
+						)
 					),
 				]);
 
