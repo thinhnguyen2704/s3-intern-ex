@@ -2,7 +2,6 @@ import { useMemo } from 'react';
 import './Category.scss';
 
 const Category = ({ category, products }: any) => {
-
 	const productNamesList = useMemo(() => {
 		const tempList: string[] = [];
 		const productsLength = products.length;
