@@ -11,6 +11,11 @@
 
 .product-name {
   font-size: 15px;
+  text-decoration: none;
+
+}  
+.product-name :hover {
+  color: blue;    
 }
 
 @media screen and (max-width: 600px) {
