@@ -15,28 +15,28 @@ const ProductDetail = () => {
   }, [])
 
   return (
-    <div>
+    <>
       {productDetail && (
-        <div>
-          <div>
+        <ul>
+          <li>
             Id: {productDetail._id}
-          </div>
-          <div>
+          </li>
+          <li>
             Name: {productDetail.name}
-          </div>
-          <div>
+          </li>
+          <li>
             Category: {productDetail.category}
-          </div>
-          <div>
+          </li>
+          <li>
             Availability: {productDetail.isActive ? '✅' : '❌'}
-          </div>
-          <div>
+          </li>
+          <li>
             Price: {productDetail.price}
-          </div>
+          </li>
           <img src={productDetail.picture} alt={productDetail.name} />
-        </div>
+        </ul>
       )}
-    </div>
+    </>
   )
 }
 
