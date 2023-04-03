@@ -29,7 +29,7 @@ const Category = ({ category, products }: Category) => {
   }, [])
 
   return (
-    <>
+    <div>
       <div className="category">{category}</div>
       {productsList?.map((product, index) => {
         return (
@@ -40,7 +40,7 @@ const Category = ({ category, products }: Category) => {
           </Link>
         )
       })}
-    </>
+    </div>
   )
 }
 
