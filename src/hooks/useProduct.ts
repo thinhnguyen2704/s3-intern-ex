@@ -9,12 +9,12 @@ interface Product {
   name: string
 }
 
-const useProduct = () => {
+const useProduct = (url: string) => {
   const [products, setProducts] = useState<Product[]>([])
   const [categories, setCategories] = useState<string[]>([])
 
   useEffect(() => {
-    fetch('./products.json')
+    fetch(url)
       .then((response) => {
         return response.json()
       })
