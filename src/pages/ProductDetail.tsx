@@ -28,7 +28,7 @@ const ProductDetail = () => {
             Category: {productDetail.category}
           </div>
           <div>
-            Availability: {productDetail.isActive ? 'Yes' : 'No'}
+            Availability: {productDetail.isActive ? '✅' : '❌'}
           </div>
           <div>
             Price: {productDetail.price}
