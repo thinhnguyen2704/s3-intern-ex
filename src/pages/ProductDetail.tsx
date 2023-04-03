@@ -5,7 +5,7 @@ import useProduct from '../hooks/useProduct'
 const ProductDetail = () => {
   const { id } = useParams()
   const { products } = useProduct('../../products.json')
- 
+
   const productDetail = useMemo(() => {
     const productsLength = products.length;
     for (let i = 0; i < productsLength; i++) {
@@ -15,7 +15,7 @@ const ProductDetail = () => {
   }, [])
 
   return (
-    <>
+    <div>
       {productDetail && (
         <ul>
           <li>
@@ -36,7 +36,7 @@ const ProductDetail = () => {
           <img src={productDetail.picture} alt={productDetail.name} />
         </ul>
       )}
-    </>
+    </div>
   )
 }
 
