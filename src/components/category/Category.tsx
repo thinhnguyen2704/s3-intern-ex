@@ -1,13 +1,28 @@
 import { useMemo } from 'react'
+import { Link } from 'react-router-dom'
 import './Category.scss'
 
-const Category = ({ category, products }: any) => {
-  const productNamesList = useMemo(() => {
-    const tempList: string[] = []
+interface Product {
+  _id: string
+  isActive: boolean
+  price: string
+  picture: string
+  category: string
+  name: string
+}
+
+interface Category {
+  category: string
+  products: Product[]
+}
+
+const Category = ({ category, products }: Category) => {
+  const productsList = useMemo(() => {
+    const tempList: Product[] = []
     const productsLength = products.length
     for (let i = 0; i < productsLength; i++) {
       if (products[i].category === category) {
-        tempList.push(products[i].name)
+        tempList.push(products[i])
       }
     }
     return tempList
@@ -16,11 +31,13 @@ const Category = ({ category, products }: any) => {
   return (
     <div>
       <div className="category">{category}</div>
-      {productNamesList?.map((productName, index) => {
+      {productsList?.map((product, index) => {
         return (
-          <div className="product-name" key={index}>
-            {productName}
-          </div>
+          <Link key={index} className="product-name" to={`/product/${product._id}`} >
+            <div>
+              {product.name}
+            </div>
+          </Link>
         )
       })}
     </div>
