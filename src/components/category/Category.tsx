@@ -30,13 +30,11 @@ const Category = ({ category, products }: Category) => {
 
   return (
     <div>
-      <div className="category">{category}</div>
+      <div className='category'>{category}</div>
       {productsList?.map((product, index) => {
         return (
-          <Link key={index} className="product-name" to={`/product/${product._id}`} >
-            <div>
-              {product.name}
-            </div>
+          <Link key={index} className='product-name' to={`/product/${product._id}`}>
+            <div>{product.name}</div>
           </Link>
         )
       })}
