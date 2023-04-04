@@ -1,5 +1,4 @@
-import { useMemo, useState } from 'react'
-import useProduct from './useProduct'
+import { useEffect, useState } from 'react'
 
 interface Product {
   _id: string
@@ -10,18 +9,24 @@ interface Product {
   name: string
 }
 
-const useProductDetail = (id: string) => {
+const useProductDetail = (id: string, url: string) => {
   const [productDetail, setProductDetail] = useState<Product>()
 
-  const { products } = useProduct('../../products.json')
-
-  useMemo(() => {
-    const productsLength = products.length
-    for (let i = 0; i < productsLength; i++) {
-      if (products[i]._id === id) setProductDetail(products[i])
-    }
+  useEffect(() => {
+    fetch(url)
+      .then((response) => {
+        return response.json()
+      })
+      .then((productsData) => {
+        const productsLength = productsData.length
+        for (let i = 0; i < productsLength; i++) {
+          if (productsData[i]._id === id) setProductDetail(productsData[i])
+        }
+      })
+      .catch((err: Error) => {
+        console.log(err.message)
+      })
   }, [])
-  console.log(productDetail)
   return productDetail
 }
 
