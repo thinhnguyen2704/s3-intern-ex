@@ -3,7 +3,7 @@ import useProductDetail from '../hooks/useProductDetail'
 
 const ProductDetail = () => {
   const { id } = useParams()
-  const productDetail = useProductDetail(id!)
+  const productDetail = useProductDetail(id!, '../../products.json')
 
   return (
     <div>
