@@ -1,13 +1,5 @@
 import { useEffect, useState } from 'react'
-
-interface Product {
-  _id: string
-  isActive: boolean
-  price: string
-  picture: string
-  category: string
-  name: string
-}
+import { Product } from '../components/category/Category'
 
 const useProductDetail = (id: string, url: string) => {
   const [productDetail, setProductDetail] = useState<Product>()
