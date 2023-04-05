@@ -1,12 +1,12 @@
 import { useState, useEffect } from 'react'
 import { Product } from '../components/category/Category'
 
-const useProduct = (url: string) => {
+const useProduct = () => {
   const [products, setProducts] = useState<Product[]>([])
   const [categories, setCategories] = useState<string[]>([])
 
   useEffect(() => {
-    fetch(url)
+    fetch('./products.json')
       .then((response) => {
         return response.json()
       })
