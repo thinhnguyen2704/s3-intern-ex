@@ -11,9 +11,13 @@ const useProductDetail = (id: string, url: string) => {
       })
       .then((productsData) => {
         const productsLength = productsData.length
+        let tempProduct: Product = productsData[0]
         for (let i = 0; i < productsLength; i++) {
-          if (productsData[i]._id === id) setProductDetail(productsData[i])
+          if (productsData[i]._id === id) {
+            tempProduct = productsData[i]
+          }
         }
+        setProductDetail(tempProduct)
       })
       .catch((err: Error) => {
         console.log(err.message)
