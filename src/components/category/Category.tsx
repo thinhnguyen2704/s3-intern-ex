@@ -2,7 +2,7 @@ import { useMemo } from 'react'
 import { Link } from 'react-router-dom'
 import './Category.scss'
 
-interface Product {
+export interface Product {
   _id: string
   isActive: boolean
   price: string
