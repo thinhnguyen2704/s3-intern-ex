@@ -2,8 +2,8 @@ import { useParams } from 'react-router-dom'
 import useProductDetail from '../hooks/useProductDetail'
 
 const ProductDetail = () => {
-  const { id } = useParams()
-  const productDetail = useProductDetail(id!, '../../products.json')
+  const { id = '' } = useParams()
+  const productDetail = useProductDetail(id, '../../products.json')
 
   return (
     <div>
