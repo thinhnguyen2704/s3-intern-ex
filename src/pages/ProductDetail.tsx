@@ -3,18 +3,18 @@ import useProductDetail from '../hooks/useProductDetail'
 
 const ProductDetail = () => {
   const { id = '' } = useParams()
-  const productDetail = useProductDetail(id, '../../products.json')
+  const { _id, name, category, isActive, price, picture } = useProductDetail(id) || {}
 
   return (
     <div>
-      {productDetail && (
+      {_id && (
         <ul>
-          <li>Id: {productDetail._id}</li>
-          <li>Name: {productDetail.name}</li>
-          <li>Category: {productDetail.category}</li>
-          <li>Availability: {productDetail.isActive ? '✅' : '❌'}</li>
-          <li>Price: {productDetail.price}</li>
-          <img src={productDetail.picture} alt={productDetail.name} />
+          <li>Id: {_id}</li>
+          <li>Name: {name}</li>
+          <li>Category: {category}</li>
+          <li>Availability: {isActive ? '✅' : '❌'}</li>
+          <li>Price: {price}</li>
+          <img src={picture} alt={name} />
         </ul>
       )}
     </div>
