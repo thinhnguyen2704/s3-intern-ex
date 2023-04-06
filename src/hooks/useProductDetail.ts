@@ -18,10 +18,9 @@ const useProductDetail = (id: string) => {
           }
         }
         setProductDetail(tempProduct)
-        throw new Error('An error occurred when fetching data!')
       })
       .catch((err: Error) => {
-        console.log(err.message)
+        throw err
       })
   }, [])
   return productDetail
