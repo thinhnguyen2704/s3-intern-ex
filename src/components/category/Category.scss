@@ -1,0 +1,34 @@
+.category,
+.product-name {
+  color: #fff;
+}
+
+.category {
+  font-size: 35px;
+  border-bottom: 1px solid #fff;
+  height: 120px;
+}
+
+.product-name {
+  font-size: 15px;
+  text-decoration: none;
+}
+.product-name :hover {
+  color: blue;
+}
+
+@media screen and (max-width: 600px) {
+  .category {
+    font-size: 28px;
+  }
+}
+
+@media screen and (max-width: 300px) {
+  .category {
+    font-size: 15px;
+  }
+
+  .product-name {
+    font-size: 10px;
+  }
+}
